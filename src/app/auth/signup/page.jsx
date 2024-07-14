@@ -1,11 +1,12 @@
 'use client'
 
-import { Register } from '@/app/firebase'
+import { Register, updateProfile } from '@/app/firebase'
 import SubmitButton from '@/components/ui/SubmitButton'
+import Link from 'next/link'
+
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import { useDispatch } from 'react-redux'
 
 const SignForm = () => {
   const [userName, setUserName] = useState('')
@@ -23,7 +24,8 @@ const SignForm = () => {
     }
 
     try {
-      const user = await Register(email, password)
+      const userCredential = await Register(email, password)
+      const user = userCredential.user
 
       if (user) {
         setTimeout(() => {
@@ -95,6 +97,12 @@ const SignForm = () => {
             variant={'contained'}
           />
         </form>
+        <p className="mt-5 text-sm">
+          Do you have account ?{' '}
+          <Link className="underline" href={'/auth/login'}>
+            Login
+          </Link>
+        </p>
       </div>
     </div>
   )
