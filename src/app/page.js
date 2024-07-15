@@ -1,3 +1,9 @@
+import Sidebar from '@/components/Home/Sidebar/Sidebar'
+
 export default function Home() {
-  return <h1>Onur</h1>
+  return (
+    <main className="main container mx-auto">
+      <Sidebar />
+    </main>
+  )
 }

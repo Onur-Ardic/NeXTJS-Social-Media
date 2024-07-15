@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f0edf5;
+  color: black;
+}
+
+.Oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.Roboto {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}

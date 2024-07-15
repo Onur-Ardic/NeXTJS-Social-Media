@@ -1,7 +1,8 @@
 import { Inter } from 'next/font/google'
-import './globals.css'
+import './globals.scss'
 import StoreProvider from './provider'
 import { Toaster } from 'react-hot-toast'
+import Navbar from '@/components/Home/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <StoreProvider>
         <body className={inter.className}>
+          <Navbar />
           <Toaster />
           {children}
         </body>
