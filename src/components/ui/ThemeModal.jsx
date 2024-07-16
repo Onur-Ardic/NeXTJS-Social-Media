@@ -6,7 +6,6 @@ import Fade from '@mui/material/Fade'
 import Typography from '@mui/material/Typography'
 import { useDispatch } from 'react-redux'
 import { setTheme } from '@/lib/slice/themeSlice'
-import { Sansita } from 'next/font/google'
 
 const style = {
   position: 'absolute',
