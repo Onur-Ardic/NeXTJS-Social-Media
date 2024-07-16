@@ -4,9 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
-.dim {
+.dark {
   background-color: #000;
-  color: black;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+.dim {
+  background-color: #17153b;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+.light {
+  background-color: #f0edf5;
+  color: #000;
+  transition: 0.5s ease-in-out;
+
+  .navbar {
+    background-color: #fff;
+    color: #000;
+  }
 }
 
 .Oswald {

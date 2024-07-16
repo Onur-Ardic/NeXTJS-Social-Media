@@ -6,6 +6,7 @@ import Fade from '@mui/material/Fade'
 import Typography from '@mui/material/Typography'
 import { useDispatch } from 'react-redux'
 import { setTheme } from '@/lib/slice/themeSlice'
+import { Sansita } from 'next/font/google'
 
 const style = {
   position: 'absolute',
@@ -25,8 +26,9 @@ export default function TransitionsModal({ open, setOpen }) {
   const dispatch = useDispatch()
 
   return (
-    <div>
+    <>
       <Modal
+        className="Oswald"
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={open}
@@ -52,8 +54,16 @@ export default function TransitionsModal({ open, setOpen }) {
                 >
                   Dim
                 </button>
-                <button className="w-[50px] h-[50px] rounded-full bg-black">Black</button>
-                <button className="w-[50px] h-[50px] rounded-full bg-white border text-black">
+                <button
+                  onClick={(e) => dispatch(setTheme('dark'))}
+                  className="w-[50px] h-[50px] rounded-full bg-black"
+                >
+                  Dark
+                </button>
+                <button
+                  onClick={(e) => dispatch(setTheme('light'))}
+                  className="w-[50px] h-[50px] rounded-full bg-white border text-black"
+                >
                   Light
                 </button>
               </div>
@@ -61,6 +71,6 @@ export default function TransitionsModal({ open, setOpen }) {
           </Box>
         </Fade>
       </Modal>
-    </div>
+    </>
   )
 }

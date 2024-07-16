@@ -1,10 +1,7 @@
 'use client'
 
-import { selectedColor } from '@/lib/slice/themeSlice'
 import { useSelector } from 'react-redux'
-
 export const ThemeWrapper = ({ children }) => {
-  const selectedTheme = useSelector(selectedColor)
-  console.log(selectedTheme)
+  const selectedTheme = useSelector((state) => state.theme.theme)
   return <body className={selectedTheme}>{children}</body>
 }

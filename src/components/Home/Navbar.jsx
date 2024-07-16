@@ -3,7 +3,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import Link from 'next/link'
 const Navbar = () => {
   return (
-    <nav className="navbar bg-[#fff] text-black">
+    <nav className="navbar Roboto font-medium  border-b-2">
       <div className="navbar-container container mx-auto p-3 flex justify-between items-center ">
         <div className="logo flex items-center">
           <DeveloperModeIcon />
