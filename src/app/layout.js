@@ -3,6 +3,7 @@ import './globals.scss'
 import StoreProvider from './provider'
 import { Toaster } from 'react-hot-toast'
 import Navbar from '@/components/Home/Navbar'
+import { ThemeWrapper } from './themewrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,11 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <StoreProvider>
-        <body className={inter.className}>
+        <ThemeWrapper>
           <Navbar />
           <Toaster />
           {children}
-        </body>
+        </ThemeWrapper>
       </StoreProvider>
     </html>
   )

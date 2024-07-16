@@ -1,3 +1,5 @@
+'use client'
+
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
 import SettingsIcon from '@mui/icons-material/Settings'
 import LogoutIcon from '@mui/icons-material/Logout'
@@ -5,8 +7,14 @@ import LoginIcon from '@mui/icons-material/Login'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import ContrastIcon from '@mui/icons-material/Contrast'
 import Link from 'next/link'
+import TransitionsModal from '@/components/ui/ThemeModal'
+import { useState } from 'react'
 
 const Sidebar = () => {
+  const [open, setOpen] = useState(false)
+
+  const openThemeModal = () => setOpen(true)
+
   return (
     <div className="sidebar ">
       <div className="fixed w-[250px] mt-10 p-5 h-max bg-[#fafafa] rounded-lg text-black ">
@@ -48,7 +56,8 @@ const Sidebar = () => {
 
           <div className="buttons-side flex item-center text-lg gap-5">
             <ContrastIcon />
-            <Link href={'/settings'}>Theme</Link>
+            <button onClick={openThemeModal}>Theme</button>
+            <TransitionsModal open={open} setOpen={setOpen} />
           </div>
         </div>
       </div>
