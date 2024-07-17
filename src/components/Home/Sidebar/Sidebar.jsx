@@ -17,44 +17,54 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar ">
-      <div className="fixed w-[250px] mt-10 p-5 h-max bg-[#fafafa] rounded-lg text-black ">
+      <div className="fixed w-[250px] mt-10 h-max bg-[#fafafa] rounded-lg text-black ">
         <div className="sidebar-items flex flex-col leading-5 gap-10">
-          <div className="buttons-side flex item-center  gap-5 hover:text-[#402E7A] ">
+          <div className="buttons-side p-3 flex item-center gap-5 hover:bg-[#402e7a] hover:rounded-t-lg transition hover:text-[#fff] ">
             <p>
               <AccountBoxIcon className="text-2xl" />
             </p>
-            <Link href={'/profile'}>Profile</Link>
+            <Link className="mt-0.5" href={'/profile'}>
+              Profile
+            </Link>
           </div>
-          <div className="buttons-side  flex  item-center  gap-5">
+          <div className="buttons-side p-3 flex item-center gap-5 hover:bg-[#402e7a] transition hover:text-[#fff] ">
             <p>
               <SettingsIcon />
             </p>
-            <Link href={'/settings'}>Settings</Link>
+            <Link className="mt-0.5" href={'/settings'}>
+              Settings
+            </Link>
           </div>
-          <div className="buttons-side flex item-center   gap-5">
+          <div className="buttons-side p-3 flex item-center gap-5 hover:bg-[#402e7a] transition hover:text-[#fff] ">
             <p>
               <LogoutIcon />
             </p>{' '}
-            <button>Logout</button>
+            <button className="mt-0.5">Logout</button>
           </div>
-          <div className="buttons-side flex  item-center  gap-5">
+          <div className="buttons-side p-3 flex item-center gap-5 hover:bg-[#402e7a] transition hover:text-[#fff] ">
             <p>
               <LoginIcon />
             </p>{' '}
-            <Link href={'/auth/login'}>Login</Link>
+            <Link className="mt-0.5" href={'/auth/login'}>
+              Login
+            </Link>
           </div>
-          <div className="buttons-side flex item-center gap-5 ">
+          <div className="buttons-side p-3 flex item-center gap-5 hover:bg-[#402e7a]  transition hover:text-[#fff] ">
             <p>
               <PersonAddIcon />
             </p>
-            <Link href={'/auth/signup'}>Signup</Link>
+            <Link className="mt-0.5" href={'/auth/signup'}>
+              Signup
+            </Link>
           </div>
-          <div className="buttons-side flex item-center  gap-5">
+          <div className="buttons-side p-3 flex item-center gap-5 hover:bg-[#402e7a]  transition hover:text-[#fff] ">
             <LogoutIcon />
-            <Link href={'/settings'}>Logout</Link>
+            <Link className="mt-0.5" href={'/settings'}>
+              Logout
+            </Link>
           </div>
 
-          <div className="buttons-side flex item-center  gap-5">
+          <div className="buttons-side p-3 flex item-center gap-5 hover:bg-[#402e7a] hover:rounded-b-lg transition hover:text-[#fff] ">
             <ContrastIcon />
             <button onClick={openThemeModal}>Theme</button>
             <TransitionsModal open={open} setOpen={setOpen} />
