@@ -27,9 +27,9 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-buttons">
-          <button>
+          <Link href={'/auth/login'}>
             <AccountCircleIcon />
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
