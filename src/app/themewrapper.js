@@ -3,5 +3,6 @@
 import { useSelector } from 'react-redux'
 export const ThemeWrapper = ({ children }) => {
   const selectedTheme = useSelector((state) => state.theme.theme)
-  return <body className={selectedTheme}>{children}</body>
+  const selectedFontSize = useSelector((state) => state.theme.fontSize)
+  return <body className={`${selectedTheme}  ${selectedFontSize}`}>{children}</body>
 }

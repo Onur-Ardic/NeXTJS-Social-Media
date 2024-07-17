@@ -1,4 +1,3 @@
-// LoginPage.js
 'use client'
 
 import { Login } from '@/app/firebase'
@@ -28,7 +27,7 @@ const LoginPage = () => {
         dispatch(login({ email: user.email, displayName: user.displayName }))
         toast.success('Giriş başarılı, yönlendiriliyorsunuz...')
         setTimeout(() => {
-          // router.push('/')
+          router.push('/')
         }, 3000)
       }
     } catch (error) {
