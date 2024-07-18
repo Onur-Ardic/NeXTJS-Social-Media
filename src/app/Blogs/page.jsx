@@ -14,7 +14,7 @@ export default function Blogs() {
     <div>
       <h1>Blog Posts</h1>
       <ul>
-        {blogs.map((blog) => (
+        {blogs?.map((blog) => (
           <li key={blog._id}>
             <h2>{blog.title}</h2>
             <p>{blog.content}</p>

@@ -50,7 +50,7 @@ export default function NewBlog() {
           placeholder="Read a Post"
         ></textarea>
       </div>
-      <SubmitButton text={'Post'} type={'submit'} />
+      <SubmitButton text={'Post'} type={'submit'} variant={'primary'} />
     </form>
   )
 }
