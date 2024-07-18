@@ -1,5 +1,5 @@
-import dbConnect from '../../../lib/mongodb'
-import Blog from '../../../models/Blog'
+import dbConnect from '@/lib/mongodb'
+import Blog from '@/models/Blog'
 
 export async function GET(req, res) {
   await dbConnect()
