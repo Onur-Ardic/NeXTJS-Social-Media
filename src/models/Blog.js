@@ -9,6 +9,11 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide content'],
   },
+
+  image: {
+    type: String,
+    required: [true, 'Please provide content'],
+  },
   date: {
     type: Date,
     default: Date.now,
