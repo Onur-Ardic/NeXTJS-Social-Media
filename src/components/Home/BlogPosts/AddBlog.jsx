@@ -1,7 +1,7 @@
 'use client'
 import SubmitButton from '@/components/ui/SubmitButton'
 import { useState } from 'react'
-import Blogs from '@/app/Blogs/page'
+import BlogPosts from './BlogPosts'
 
 export default function AddBlog() {
   const [title, setTitle] = useState('')
@@ -16,7 +16,7 @@ export default function AddBlog() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ title, content, image }),
     })
 
     if (res.ok) {
@@ -67,8 +67,7 @@ export default function AddBlog() {
           <SubmitButton text={'Post'} type={'submit'} variant={'primary'} />
         </div>
       </form>
-
-      <Blogs />
+      <BlogPosts />
     </div>
   )
 }
