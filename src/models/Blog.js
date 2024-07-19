@@ -15,4 +15,4 @@ const BlogSchema = new mongoose.Schema({
   },
 })
 
-export default mongoose.models.Blog || mongoose.model('Blog', BlogSchema)
+export default mongoose.models.blogs || mongoose.model('blogs', BlogSchema)

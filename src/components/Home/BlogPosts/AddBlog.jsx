@@ -9,7 +9,7 @@ export default function NewBlog() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const res = await fetch('/Api/Blogs', {
+    const res = await fetch('/api/blogs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
