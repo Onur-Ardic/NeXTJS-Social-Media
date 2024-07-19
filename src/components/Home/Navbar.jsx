@@ -1,7 +1,14 @@
+'use client'
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import Link from 'next/link'
+import { logout } from '@/lib/slice/authSlice'
+import { Logout } from '@/app/firebase'
+import { useSelector } from 'react-redux'
 const Navbar = () => {
+  const user = localStorage.getItem('user')
+  const userStatus = useSelector((state) => state.auth.userStatus)
+  console.log(userStatus)
   return (
     <nav className="navbar Roboto font-medium  border-b-2">
       <div className="navbar-container container mx-auto p-3 flex justify-between items-center ">
@@ -27,9 +34,13 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-buttons">
-          <Link href={'/auth/login'}>
-            <AccountCircleIcon />
-          </Link>
+          {userStatus ? (
+            <button onClick={() => Logout(false)}>Logout</button>
+          ) : (
+            <Link href={'/auth/login'}>
+              <AccountCircleIcon />
+            </Link>
+          )}
         </div>
       </div>
     </nav>

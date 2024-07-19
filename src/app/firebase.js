@@ -47,6 +47,8 @@ export const Login = async (email, password) => {
 export const Logout = async () => {
   try {
     await signOut(auth)
+    localStorage.removeItem('user')
+    window.location.reload()
     return true
   } catch (error) {
     toast.error(error)

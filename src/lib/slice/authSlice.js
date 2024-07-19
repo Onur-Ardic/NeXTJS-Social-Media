@@ -13,12 +13,11 @@ export const authSlice = createSlice({
     login: (state, action) => {
       state.userStatus = true
       state.usermail = action.payload.email
-      state.displayName = action.payload.displayName
-      localStorage.setItem('user', JSON.stringify(action.payload.email, action.payload.displayName))
+      localStorage.setItem('user', JSON.stringify(action.payload.email))
     },
-    logout: (state) => {
-      state.userStatus = false
-      state.userName = {}
+    logout: (state, action) => {
+      state.userStatus = action.payload
+      localStorage.removeItem('user')
     },
   },
 })

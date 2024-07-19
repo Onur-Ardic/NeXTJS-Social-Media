@@ -1,6 +1,11 @@
 import mongoose from 'mongoose'
 
 const BlogSchema = new mongoose.Schema({
+  user: {
+    type: String,
+    required: false,
+  },
+
   title: {
     type: String,
     required: [true, 'Please provide a title'],
@@ -12,7 +17,7 @@ const BlogSchema = new mongoose.Schema({
 
   image: {
     type: String,
-    required: [true, 'Please provide content'],
+    required: false,
   },
   date: {
     type: Date,
