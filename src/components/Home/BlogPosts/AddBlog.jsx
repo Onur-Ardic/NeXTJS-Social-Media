@@ -24,7 +24,7 @@ export default function AddBlog() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const res = await fetch('/api/blogs', {
+    const res = await fetch('http://localhost:3000/api/blogs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

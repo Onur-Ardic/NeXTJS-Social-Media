@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 const Navbar = () => {
   const user = localStorage.getItem('user')
   const userStatus = useSelector((state) => state.auth.userStatus)
-  console.log(userStatus)
+
   return (
     <nav className="navbar Roboto font-medium  border-b-2">
       <div className="navbar-container container mx-auto p-3 flex justify-between items-center ">

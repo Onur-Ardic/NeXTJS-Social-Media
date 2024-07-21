@@ -10,6 +10,7 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide a title'],
   },
+
   content: {
     type: String,
     required: [true, 'Please provide content'],
@@ -19,6 +20,7 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+
   date: {
     type: Date,
     default: Date.now,
