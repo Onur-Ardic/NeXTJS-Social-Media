@@ -13,7 +13,7 @@ async function getData(id) {
 const Page = async ({ params }) => {
   const { id } = params
   const data = await getData(id)
-
+  console.log(data)
   const { blog } = data
   const { title, content, image, date, user } = blog
 
