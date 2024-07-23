@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CircularLoading from '../ui/CircularLoading'
 
 const BlogDetails = ({ params }) => {
   const [datablog, setDataBlog] = useState(null)
@@ -17,7 +18,7 @@ const BlogDetails = ({ params }) => {
   }, [params.id])
 
   if (loading) {
-    return <div>Loading...</div>
+    return <CircularLoading />
   }
 
   if (!datablog) {
