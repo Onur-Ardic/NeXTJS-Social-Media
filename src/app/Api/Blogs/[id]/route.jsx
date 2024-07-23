@@ -1,13 +1,26 @@
-import BlogPosts from '@/components/Home/BlogPosts/BlogPosts'
 import dbConnect from '@/lib/mongodb'
-import blogs from '@/models/Blog'
-
 import { NextResponse } from 'next/server'
+import mongoose from 'mongoose'
+import Blog from '../../../../../models/Blog'
 
 export async function GET(req, { params }) {
   const { id } = params
   await dbConnect()
-  const blog = await blogs.findOne({ _id: id })
-  console.log(blog)
-  return NextResponse.json({ BlogPosts }, { status: 200 })
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return NextResponse.json({ error: 'Invalid ID format' }, { status: 400 })
+  }
+
+  try {
+    const blog = await Blog.findOne({ _id: id })
+
+    if (!blog) {
+      return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
+    }
+
+    return NextResponse.json({ blog }, { status: 200 })
+  } catch (error) {
+    console.error('Error fetching blog:', error)
+    return NextResponse.json({ error: 'Server error' }, { status: 500 })
+  }
 }

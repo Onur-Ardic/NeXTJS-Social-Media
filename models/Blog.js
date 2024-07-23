@@ -25,6 +25,14 @@ const BlogSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  comments: [
+    {
+      user: String,
+      comment: String,
+      date: { type: Date, default: Date.now },
+    },
+  ],
 })
 
 export default mongoose.models.blogs || mongoose.model('blogs', BlogSchema)
