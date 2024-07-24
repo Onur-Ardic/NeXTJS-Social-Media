@@ -8,7 +8,7 @@ const AddComments = ({ params }) => {
   const addCommentHandler = async (e) => {
     e.preventDefault()
 
-    const res = await fetch(`http://localhost:3000/api/blogs/${params.id}`, {
+    const res = await fetch(`http://localhost:3000/api/blogs/${params.id}/comments`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
