@@ -11,8 +11,8 @@ export default function AddBlog() {
   const [image, setImage] = useState('')
   const [content, setContent] = useState('')
   const [displayImage, setDisplayImage] = useState(false)
-  // const userStatus = useSelector((state) => state.auth.userStatus)
-  const userStatus = true
+  const [newBlogPost, setNewBlogPost] = useState(null)
+  const userStatus = useSelector((state) => state.auth.userStatus)
 
   useEffect(() => {
     const userFromStorage = localStorage.getItem('user')
@@ -24,7 +24,7 @@ export default function AddBlog() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const res = await fetch('http://localhost:3000/api/blogs', {
+    const res = await fetch('/api/blogs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,9 +33,11 @@ export default function AddBlog() {
     })
 
     if (res.ok) {
+      const data = await res.json()
       setTitle('')
       setContent('')
       setImage('')
+      setNewBlogPost(data.data)
       alert('Blog post created!')
     } else {
       alert('Failed to create blog post')
@@ -99,7 +101,7 @@ export default function AddBlog() {
         </form>
       )}
 
-      <BlogPosts />
+      <BlogPosts newBlog={newBlogPost} />
     </div>
   )
 }
