@@ -11,8 +11,6 @@ export default function BlogDetailsPage({ params }) {
       <Sidebar />
       <BlogDetails params={params} />
       <div className="commets-area mt-10">
-        <h3 className="text-xl mt-10 text-center">Comments</h3>
-
         <div className="add-comment flex justify-center mx-auto w-[500px] items-center">
           <AddComments params={params} />
         </div>

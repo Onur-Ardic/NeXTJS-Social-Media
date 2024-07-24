@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import CircularLoading from '../ui/CircularLoading'
+import GetComments from './GetComments'
+import Sidebar from '../Home/Sidebar/Sidebar'
 
 const BlogDetails = ({ params }) => {
   const [datablog, setDataBlog] = useState(null)
@@ -25,9 +27,9 @@ const BlogDetails = ({ params }) => {
     return <div>Blog not found</div>
   }
 
-  const { title, content, user, image, date } = datablog
+  const { title, content, user, image, date, comments } = datablog
   return (
-    <div className="blog-details flex justify-center">
+    <section className="blog-details flex justify-center gap-10">
       <div className="blog-details-card mt-10 border p-3">
         <div className="blog-image">
           {image && (
@@ -45,7 +47,11 @@ const BlogDetails = ({ params }) => {
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="get-comments mt-10 ">
+        <GetComments comments={comments} />
+      </div>
+    </section>
   )
 }
 
