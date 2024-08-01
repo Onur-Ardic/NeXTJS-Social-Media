@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import CircularLoading from '../ui/CircularLoading'
-import GetComments from './GetComments'
-import Sidebar from '../Home/Sidebar/Sidebar'
+import AddComments from './AddComments'
 
 const BlogDetails = ({ params }) => {
   const [datablog, setDataBlog] = useState(null)
@@ -48,8 +47,8 @@ const BlogDetails = ({ params }) => {
         </div>
       </div>
 
-      <div className="get-comments mt-10 ">
-        <GetComments comments={comments} />
+      <div className="get-comments m-1  ">
+        <AddComments params={params} comments={comments} />
       </div>
     </section>
   )
