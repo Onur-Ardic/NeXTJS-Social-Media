@@ -1,4 +1,4 @@
-## !!PROJE HALEN GELİŞTİRİLMEKTEDİR
+
 
 ## Kurulum
 
